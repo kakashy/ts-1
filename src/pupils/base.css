@@ -1,0 +1,221 @@
+:root {
+    margin: 0;
+}
+:root {
+    scrollbar-width: 0.7rem;
+  }
+  body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.4rem;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(113, 64, 153);
+  }
+  body::-webkit-scrollbar-track {
+    background-color: var(--bg);
+  }
+  /* Themes */
+.light {
+    --bg: rgb(255, 255, 255);
+    --text: #000;
+    --btn-bg: rgb(193, 36, 255);
+    --btn-color: rgb(255, 255, 255);
+    --btn-bg-hov: rgb(221, 118, 247);
+    --btn-color-hov: rgb(255, 255, 255); 
+    --box-shadow: rgb(206, 206, 206) 1px 3px 2px;
+    --line-color: rgb(240, 169, 237);
+    --line-color-active: rgb(236, 98, 229);
+    --inv-color: #000;
+}
+.dark {
+    --bg: rgb(25, 24, 31);
+    --text: rgb(228, 222, 222);
+    --btn-bg: rgb(35, 26, 77);
+    --btn-color: rgb(235, 227, 227);
+    --btn-bg-hov: rgb(47, 39, 80);
+    --btn-color-hov: rgb(255, 255, 255);
+    --box-shadow: rgba(17, 17, 17, 0.699) 1px 3px 2px;
+    --line-color: rgb(78, 59, 77);
+    --line-color-active: rgb(236, 98, 229);
+    --inv-color: rgb(255, 255, 255);
+}
+body {
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 350ms;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  section {
+    width: 95%;
+    margin: 0;
+  }
+
+  .main-bar {
+      width: 100%;
+      height: 30px;
+      background-color: var(--bg);
+      box-shadow: var(--box-shadow);
+      position: sticky;
+      top: 0;
+  }
+
+  .main-bar #cloud-btn {
+    position: absolute;
+    width: 50px;
+    height: inherit;
+    color: var(--btn-bg);
+    left: 10px;
+  }
+  .main-bar #cloud-btn:hover {
+    color: var(--btn-bg-hov);
+    filter: hue-rotate(20deg);
+  }
+  .main-bar #cloud-cancel-btn {
+    position: absolute;
+    visibility: hidden;
+    width: 50px;
+    height: inherit;
+    color: #e80000;
+    left: 70px;
+  }
+  .main-bar #cloud-cancel-btn:hover {
+    filter: hue-rotate(20deg);
+  }
+  
+  .switch {
+    position: absolute;
+    right: 20px;
+  }
+  .section-intro {
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .add-form {
+      display: flex;
+      gap: 1.2rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+input {
+    outline: none;
+    width: 50vw;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: inherit;
+    color: inherit;
+    border-color: var(--line-color);
+}
+input[type=text]:focus {
+    border-color: var(--line-color-active);
+}
+select {
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 45vw;
+  padding: 9px;
+  border-width: 1px;
+  border-color: var(--line-color);
+  background-color: inherit;
+  color: inherit;
+}
+select:focus-within {
+  color: var(--inv-color);
+  background-color: inherit;
+}
+
+.btn, .v-btn {
+  padding: 10px;
+  cursor: pointer;
+  font-size: inherit;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 75%;
+}
+
+  .btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+  }
+  .btn:hover {
+    background-color: var(--btn-bg-hov);
+    color: var(--btn-color-hov);
+    border-bottom: 5px solid #11FF12;
+  }
+
+#register-status {
+  visibility: hidden;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(224, 99, 49);
+  transition: 200ms ease-in-out;
+}
+#register-status .show {
+  visibility: visible;
+}
+
+#crash-db {
+  visibility: hidden;
+  background-color: #E81000;
+  color: var(--btn-color);
+}
+#crash-db:hover {
+  background-color: #e85500;
+}
+
+/* view section */
+.view-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  margin-bottom: 50px;
+}
+.v-btn:hover {
+  background-color: var(--btn-bg-hov);
+  color: var(--btn-color-hov);
+  border-bottom: 5px solid #11FF12;
+}
+
+#viewer {
+  list-style: none;
+  width: 80%;
+}
+#viewer li {
+  width: 100%;
+  padding: 10px 0px 10px 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#viewer li:hover {
+  border-left: 2px solid #11FF12;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#mySearch {
+  visibility: hidden;
+}

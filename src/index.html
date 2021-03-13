@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Content-Security-Policy" content="default-src 'src'; script-src 'src'">
+  <meta name="X-Content-Security-Policy" content="default-src 'src'; script-src 'src'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+
+  <title>TS 1</title>
+</head>
+<body class="light">
+  <section class="header">
+    <div id="top-bar">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round" id="slider"></span>
+      </label>
+    </div>
+    <div id="header">
+      <label>
+        TS 1
+      </label>
+    </div>
+    
+  </section>
+  <section class="modules" id="modules">
+    <div class="module-elements" id="admin-module">
+      <p class="description">
+        Create/edit staff & pupils details and view analytics
+      </p>
+      <button class="module-btn" id="admin-btn">Admin</button>
+    </div>
+    <div class="module-elements" id="staff-module">
+      <p class="description">
+        Staff records and scope of their work
+      </p>
+      <button class="module-btn" id="staff-btn">Staff</button>
+    </div>
+    <div class="module-elements" id="pupils-module">
+      <p class="description">
+
+      </p>
+      <button class="module-btn" id="pupils-btn">Pupils</button>
+    </div>
+  </section>
+
+</body>
+
+<script defer src="app.js"></script>
+<script defer src="theme.js"></script>
 </html>

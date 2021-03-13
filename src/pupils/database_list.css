@@ -1,0 +1,64 @@
+.viewer {
+    scroll-behavior: smooth;
+}
+
+#li {
+     display: grid; 
+     gap: 0.2rem;  
+     grid-template-columns: repeat( auto-fit, minmax(140px, 1fr));
+}
+
+.res-li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.res-li-name {
+    font-size: 1.3rem;
+}
+
+.res-li-bio {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    font-size: 0.8rem;
+}
+
+.res-li-btns {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+    justify-content: end;
+    right: 0;
+}
+
+.res-li-btns button {
+    cursor: pointer;
+    align-items: center;
+    justify-self: end;
+}
+.res-li-btns-dl {
+    background-color: #d40e0e;
+    color: rgba(0, 0, 0, 0.5);
+    background-image: url(../resources/icons/trash-alt-solid.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    outline: none;
+    border: none;
+    min-width: 3rem;
+    min-height: 100%;
+}
+.res-li-btns-dl:hover {
+    background-color: #d84141;
+}
+
+@media screen and (min-width: 600px) {
+    .res-li {
+        grid-column: span 1/ auto;
+
+    }
+}

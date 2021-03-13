@@ -1,0 +1,115 @@
+:root {
+    scrollbar-width: 0.7rem;
+  }
+  body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.4rem;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(113, 64, 153);
+  }
+  body::-webkit-scrollbar-track {
+    background-color: var(--bg);
+  }
+  /* Themes */
+.light {
+    --bg: rgb(255, 255, 255);
+    --text: #000;
+    --btn-bg: rgb(193, 36, 255);
+    --btn-color: rgb(255, 255, 255);
+    --btn-bg-hov: rgb(221, 118, 247);
+    --btn-color-hov: rgb(255, 255, 255); 
+    --box-shadow: rgb(206, 206, 206) 1px 3px 2px;
+    --line-color: rgb(240, 169, 237);
+    --line-color-active: rgb(236, 98, 229);
+    --inv-color: #000;
+}
+.dark {
+    --bg: rgb(25, 24, 31);
+    --text: rgb(228, 222, 222);
+    --btn-bg: rgb(35, 26, 77);
+    --btn-color: rgb(235, 227, 227);
+    --btn-bg-hov: rgb(47, 39, 80);
+    --btn-color-hov: rgb(255, 255, 255);
+    --box-shadow: rgba(17, 17, 17, 0.699) 1px 3px 2px;
+    --line-color: rgb(78, 59, 77);
+    --line-color-active: rgb(236, 98, 229);
+    --inv-color: rgb(255, 255, 255);
+}
+body {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 350ms;
+}
+
+body section {
+  width: 100%;
+}
+
+.main-bar {
+    width: 100%;
+    height: 30px;
+    background-color: var(--bg);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+}
+
+.main-bar #cloud-btn {
+  position: absolute;
+  width: 50px;
+  height: inherit;
+  color: var(--btn-bg);
+  left: 10px;
+}
+.main-bar #cloud-btn:hover {
+  color: var(--btn-bg-hov);
+  filter: hue-rotate(20deg);
+}
+.main-bar #cloud-cancel-btn {
+  position: absolute;
+  visibility: hidden;
+  width: 50px;
+  height: inherit;
+  color: #e80000;
+  left: 70px;
+}
+.main-bar #cloud-cancel-btn:hover {
+  filter: hue-rotate(20deg);
+}
+  
+.switch {
+  position: absolute;
+  right: 20px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.intro {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school-details {
+  width: 100%;
+  border: 1px solid rgba(121, 121, 121, 0.247);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  #school-details-dom {
+    width: 90%;
+    height: 200px;
+  }
+}

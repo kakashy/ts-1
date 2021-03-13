@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="./theme.css">
+    <link rel="stylesheet" href="./base.css">
+</head>
+<body class="light">
+    <section class="main-bar">
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+          </label>
+    </section>
+    <section class="main">
+        <div class="main-div">
+            <div class="intro">
+                <p>
+                    Analytics and data visualization right where you need them.
+                </p>
+            </div>
+            <div class="school-details" id="school-details">
+                <p id="school-population"></p>
+                <div id="school-details-dom" style="width: 100%; height: 350px"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./base.js" defer></script>
+    <script src="./theme.js" defer></script>
+    <script src="./viz/sneeds.js" defer></script>
+    <script src="./database/pouchdb-7.2.1.min.js"></script>
+    <script src="./../resources/scripts/pouchdb.find.js"></script>
+    <script src="./../resources/scripts/echarts.min.js"></script>
+</body>
+</html>

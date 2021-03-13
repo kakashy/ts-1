@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupils Portal</title>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="database_list.css">
+    <link rel="stylesheet" href="animations.css">
+
+    
+<script src="./database/pouchdb-7.2.1.min.js"></script>
+<script src="./database/pouchdb.find.js"></script>
+
+</head>
+<body class="light">
+    <section class="main-bar">
+        <svg id="cloud-btn" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cloud" class="svg-inline--fa fa-cloud fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4z"></path></svg>
+        <svg id="cloud-cancel-btn" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cloud" class="svg-inline--fa fa-cloud fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4z"></path></svg>
+
+        <!-- <img src="../resources/icons/cloud-solid.svg"> -->
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+          </label>
+          
+          
+    </section>
+    <section class="nav-bar">
+
+    </section>
+    <section class="main">
+        <div class="section-intro">
+            <label>Here, you get to add a new record for a pupil:</label>
+        </div>
+
+            
+        <div id="add-pupils-section">
+            <div class="add-form">
+                <label>Pupil's Name</label>
+                <input  onfocus="this.value = ''" type="text" placeholder="First name" id="reg-pup-fName" required>
+                <input onfocus="this.value = ''" type="text" placeholder="Second name" id="reg-pup-sName" required>
+                <br />
+
+                <label>Pupil's Bio</label>
+                <p style="font-size: 15px;">Birth Date:</p> 
+                <input type="date" id="birthDate" desc>
+                <div class="custom-select">
+                    <select id="special-needs">
+                      <option value="None">Special needs: (none)</option>
+                      <option value="Communication Disorders">Communication Disorders</option>
+                      <option value="Hearing Impairment">Hearing Impairment</option>
+                      <option value="Visual Impairment">Visual Impairment</option>
+                      <option value="Mild Celebral Palsy">Mild Celebral Palsy</option>
+                      <option value="Autism">Autism</option>
+                    </select>
+                  </div>
+                  <br />
+
+                <label>Guardian's Details</label>
+                <input onfocus="this.value = ''" type="text" placeholder="Guardian's full names" id="guard-name">
+                <input onfocus="this.value = ''" type="tel" maxlength="10" id="guard-number" placeholder="Guardian's phone number">
+                <br />
+
+                <button class="btn" id="submit-pup">Register</button>
+                <div id="register-status" style="font-size: 0.8rem;"></div>
+                <button class="btn" id="crash-db">Destroy Database</button>
+            </div>
+        </div>
+        <div id="view-pupils-section">
+            <div class="view-form">
+                <h1>View Pupils' Records</h1>
+                <br />
+                <p>Data present is the found on the local cache. However, pulling from the cloud may add some more.</p>
+                <br />
+                <button class="v-btn" id="view-btn" title="Show records stored in the database">Show records</button>
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a name">
+                <div id="viewer">
+                    
+                </div>
+        </div>
+    </section>
+</body>
+
+<script src="./theme.js"></script>
+<script src="./database/add.js" defer></script>
+<script src="./database/delete.js" defer></script>
+<script src="./database/view.js" defer></script>
+<script src="./search.js"></script>
+<script src="./database/crash.js" defer></script>
+<script src="./database/remote.js" defer></script>
+</html>
